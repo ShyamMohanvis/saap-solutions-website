@@ -92,8 +92,8 @@ function Navbar({ isDark, toggleTheme }) {
 
   // Logo switching with fallbacks (prefer SVG first)
   const logoCandidates = isDark
-    ? ['/assets/img/4.svg', '/assets/img/dark-mode.png', '/assets/img/logo-mark.svg']
-    : ['/assets/img/3.svg', '/assets/img/light-mode.png', '/assets/img/logo-mark.svg']
+    ? ['./assets/img/4.svg', './assets/img/dark-mode.png', './assets/img/logo-mark.svg']
+    : ['./assets/img/3.svg', './assets/img/light-mode.png', './assets/img/logo-mark.svg']
   const [logoIndex, setLogoIndex] = useState(0)
   useEffect(() => { setLogoIndex(0) }, [isDark])
   const handleLogoError = (e) => {
@@ -104,7 +104,7 @@ function Navbar({ isDark, toggleTheme }) {
     <header className={`sticky top-0 z-50 backdrop-blur ${isDark ? 'bg-deep-900/70 border-white/10' : 'bg-white/70 border-black/10'} border-b`} id="top">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
         <a href="#top" className="inline-flex items-center gap-3 font-extrabold tracking-tight group">
-          <img src="/assets/img/logo-mark.svg" alt="SAAP SOLUTIONS logo" className="w-12 h-12 md:w-16 md:h-16 object-contain group-hover:scale-105 transition-transform" />
+          <img src="./assets/img/logo-mark.svg" alt="SAAP SOLUTIONS logo" className="w-12 h-12 md:w-16 md:h-16 object-contain group-hover:scale-105 transition-transform" />
           <span className={`font-display text-lg md:text-xl font-bold uppercase tracking-widest ${isDark ? 'text-white' : 'text-deep-900'}`}>
             SAAP Solutions
           </span>
@@ -187,7 +187,7 @@ function Hero({ isDark }) {
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[500px] lg:max-w-full mx-auto">
-              <img src={`/assets/img/${isDark ? 'hero_dark_v2.png' : 'hero_light_v2.png'}`} alt="Digital Agency Hero Graphic" className="relative w-full h-auto will-change-transform drop-shadow-2xl rounded-[2rem] border border-white/10 object-cover aspect-square" />
+              <img src={`./assets/img/${isDark ? 'hero_dark_v2.png' : 'hero_light_v2.png'}`} alt="Digital Agency Hero Graphic" className="relative w-full h-auto will-change-transform drop-shadow-2xl rounded-[2rem] border border-white/10 object-cover aspect-square" />
               <div className={`absolute inset-0 -z-10 blur-3xl ${isDark ? 'bg-cyan-400/20' : 'bg-cyan-400/30'} rounded-full scale-110`}></div>
             </div>
           </motion.div>
@@ -292,12 +292,12 @@ function Services({ isDark }) {
 // View Work tiles (like Services)
 function WorkTiles({ isDark }) {
   const projects = [
-    { img: '/assets/img/fintech_v2.png', title: 'Fintech Landing', tag: 'Landing Page' },
-    { img: '/assets/img/saas_v2.png', title: 'SaaS Dashboard', tag: 'Web App' },
-    { img: '/assets/img/ecommerce_v2.png', title: 'E‑commerce Storefront', tag: 'E‑commerce' },
-    { img: '/assets/img/crypto_v2.png', title: 'Crypto Analytics', tag: 'Analytics' },
-    { img: '/assets/img/saas_v2.png', title: 'Marketing Site', tag: 'Marketing' },
-    { img: '/assets/img/ecommerce_v2.png', title: 'Portfolio Site', tag: 'Portfolio' }
+    { img: './assets/img/fintech_v2.png', title: 'Fintech Landing', tag: 'Landing Page' },
+    { img: './assets/img/saas_v2.png', title: 'SaaS Dashboard', tag: 'Web App' },
+    { img: './assets/img/ecommerce_v2.png', title: 'E‑commerce Storefront', tag: 'E‑commerce' },
+    { img: './assets/img/crypto_v2.png', title: 'Crypto Analytics', tag: 'Analytics' },
+    { img: './assets/img/saas_v2.png', title: 'Marketing Site', tag: 'Marketing' },
+    { img: './assets/img/ecommerce_v2.png', title: 'Portfolio Site', tag: 'Portfolio' }
   ]
 
   return (
@@ -371,19 +371,19 @@ function WorkTiles({ isDark }) {
 function Testimonials({ isDark }) {
   const testimonials = [
     { 
-      img: '/assets/img/testimonial1.jpg', 
+      img: './assets/img/testimonial1.jpg', 
       name: 'Alex Chen', 
       role: 'Growth Lead, Nimbus',
       text: "They delivered a stunning website that boosted our conversions within weeks. The attention to detail and user experience is exceptional." 
     },
     { 
-      img: '/assets/img/testimonial2.jpg', 
+      img: './assets/img/testimonial2.jpg', 
       name: 'Priya Singh', 
       role: 'Founder, Mavenly',
       text: "A rare blend of strategy, design, and engineering. Highly recommend their services for any digital transformation project." 
     },
     { 
-      img: '/assets/img/testimonial3.jpg', 
+      img: './assets/img/testimonial3.jpg', 
       name: 'Diego Morales', 
       role: 'COO, Verde',
       text: "Professional, fast, and detail‑oriented. The brand system they created elevated our presence significantly." 
@@ -711,7 +711,7 @@ export default function App() {
           <div className="grid lg:grid-cols-4 gap-12 items-start">
             <div className="lg:col-span-2">
               <a href="#top" className="inline-flex items-center gap-4 mb-6 group">
-                <img src="/assets/img/logo-mark.svg" alt="SAAP SOLUTIONS logo" className="w-16 h-16 md:w-20 md:h-20 object-contain group-hover:scale-105 transition-transform" />
+                <img src="./assets/img/logo-mark.svg" alt="SAAP SOLUTIONS logo" className="w-16 h-16 md:w-20 md:h-20 object-contain group-hover:scale-105 transition-transform" />
                 <span className="font-display text-2xl font-bold uppercase tracking-widest leading-tight">
                   <span className="block">SAAP</span>
                   <span className="block">Solutions</span>
