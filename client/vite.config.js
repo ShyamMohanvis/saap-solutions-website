@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import path from 'path'
 
 export default defineConfig({
+  base: '/saap-solutions-website/',
   server: {
     port: 5173,
     strictPort: true,
