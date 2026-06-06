@@ -1,0 +1,83 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles layered with Tailwind */
+:root {
+  --accent: #00d0ff;
+  --accent-orange: #ff7a59;
+  --accent-purple: #7c3aed;
+  --accent-lime: #84cc16;
+}
+
+.reveal-up { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal-up.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Utility for gradient background used in hero */
+.bg-hero {
+  /* Light palette: soft cyan tint over very light gray */
+  background-image: radial-gradient(1200px 600px at 80% -10%, rgba(0,208,255,0.15), transparent 60%),
+    linear-gradient(180deg, #f7fbff 0%, #eef6fb 100%);
+}
+
+/* Custom cursor effect */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.15s ease;
+  opacity: 0.3;
+}
+
+/* Carousel buttons (Tailwind utilities can't target pseudo layout here succinctly) */
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); color: #0b1530; width: 36px; height: 36px; border-radius: 9999px; display: grid; place-items: center; cursor: pointer; }
+.carousel-btn:hover { background: rgba(0,0,0,0.08); }
+.carousel-btn.prev { left: 6px; }
+.carousel-btn.next { right: 6px; }
+
+/* Swiper custom styles */
+.swiper-pagination-bullet { background: var(--accent) !important; opacity: 0.3 !important; }
+.swiper-pagination-bullet-active { opacity: 1 !important; }
+
+/* Ensure slides/cards align and match heights */
+.services-swiper .swiper-wrapper { align-items: stretch; }
+.services-swiper .swiper-slide { display: flex; height: auto; }
+.services-swiper .swiper-slide > * { width: 100%; }
+
+.testimonials-swiper .swiper-wrapper { align-items: stretch; }
+.testimonials-swiper .swiper-slide { display: flex; height: auto; }
+.testimonials-swiper .swiper-slide > * { width: 100%; }
+
+/* Theme switcher */
+.theme-switcher { position: relative; width: 50px; height: 24px; background: #e5e7eb; border-radius: 12px; cursor: pointer; transition: background 0.3s ease; }
+.theme-switcher.dark { background: #374151; }
+.theme-switcher::after { content: ''; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; background: white; border-radius: 50%; transition: transform 0.3s ease; }
+.theme-switcher.dark::after { transform: translateX(26px); }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Loading animation */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fadeInUp { animation: fadeInUp 0.6s ease-out; }
+
